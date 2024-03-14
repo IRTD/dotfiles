@@ -1,0 +1,15 @@
+live_config_reload = true
+
+[font]
+size = 14.0
+
+[font.normal]
+# family = "Classic Console Neue"
+family = "SpaceMono"
+style = "Bold"
+
+[window]
+decorations = "None"
+dynamic_padding = false
+opacity = 0.9
+startup_mode = "Maximized"

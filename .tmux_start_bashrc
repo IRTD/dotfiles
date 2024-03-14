@@ -1,0 +1,39 @@
+# export paths and env vars
+export PATH=$PATH:~/.cargo/bin/
+export PATH=$PATH:~/.config/zig/
+export PATH=$PATH:~/.conda/envs/
+export MARKED=$(cat ~/.config/util_saves/market_proj)
+
+alias v="nvim"
+alias c="clear"
+alias .="exa -1laB --git"
+alias ls="."
+alias x="exit"
+alias stgui="firefox https://localhost:8384"
+alias rm="rm -i"
+alias cp="cp -i"
+alias cwall="change_wallpaper"
+alias cpro="create-c-proj"
+alias obsidian="flatpak run md.obsidian.Obsidian"
+
+mark () {
+    sed -i 's@.*@'"$PWD"'@g' ~/.config/util_saves/market_proj
+    export MARKED=$(cat ~/.config/util_saves/market_proj)
+}
+
+m () {
+    cd $MARKED
+}
+
+rmx () {
+    find . -iregex $1 -delete
+}
+
+set +m
+
+# shopt -s autocd
+setopt no_nomatch
+setopt autocd
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"

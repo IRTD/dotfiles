@@ -1,0 +1,33 @@
+format = """
+[╚](#891ec7)\
+[═](#8f1ec7)\
+[═](#941ec7)\
+[Σ](#9a1ec7)\
+$directory\
+[τ](#1581cf)\
+[<](#1581cf)\
+$git_branch\
+$git_status\
+[> ](#1581cf)\
+$rust\
+$toml\
+$golang\
+$python\
+$javascript\
+\n
+[ λ ](#c4065c)
+"""
+
+[directory]
+style = "bg: #c4065c"
+format = "[ $path ]($style)"
+truncation_length = 5
+truncation_symbol = "Θ» "
+
+[git_branch]
+symbol = ""
+style = "bg: #23cfa4"
+format = '[[ $symbol $branch ]($style)]($style)'
+
+[git_status]
+style = "bg: #c71910"
