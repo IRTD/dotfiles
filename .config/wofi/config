@@ -1,0 +1,6 @@
+width=1000
+height=600
+location=center
+show=drun
+prompt=TinEye it...
+no_actions=true

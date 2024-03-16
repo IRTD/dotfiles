@@ -1,3 +1,7 @@
+# if [[ $(hyprctl instances | wc -l) -eq 1 ]]; then
+    # Hyprland
+# fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 

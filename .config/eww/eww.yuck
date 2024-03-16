@@ -1,0 +1,42 @@
+(defwindow wallpaper
+    :monitor 0
+    :exclusive false
+    :stacking "bottom"
+    (box (image
+        :path "./wallpaper"
+        :image-width 2256
+        :image-height 1504
+    ))
+)
+
+(defwindow bar
+    :monitor 0
+    :exclusive true
+    :stacking "fg"
+    :halign "top center"
+    :geometry (geometry
+        :x "0%"
+        :y "0%"
+        :width "15%"
+        :height "2%"
+        :anchor "top center"
+    )
+    (bar)
+)
+
+(defwidget bar []
+    (centerbox
+        :orientation "h"
+        (label)
+        (box
+            :class "time"
+            :halign "end"
+            (label :text time)
+        )
+        (label)
+    )
+)
+
+(defpoll time :interval "5s"
+    "date +'%H:%M   %b %d, %Y'"
+)

@@ -1,0 +1,44 @@
+window {
+    margin: 0px;
+    border: 0px solid #9e1837; 
+    background: rgb(61,41,41);
+    background: linear-gradient(0deg, rgba(61,41,41,0.3) 0%, rgba(153,57,57,0.8) 100%);
+    border-radius: 30px;
+    color: rgba(150, 150, 150, 1);
+}
+
+#input {
+    padding: 10px;
+    border-radius: 30px;
+    background: rgb(153,57,57);
+    background: linear-gradient(0deg, rgba(153,57,57,0.8) 0%, rgba(61,41,41,0.3) 100%);
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    background: ;
+        outline: none;
+}
+
+#input:focus {
+    border: 0px solid #520a35;
+    margin-bottom: 10px;
+}
+
+#inner-box {
+    border-radius: 30px;
+}
+
+#text:selected {
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#entry:selected {
+    margin: 0px;
+    background-color: rgba(170, 70, 70, 0.5);
+    padding-left: 15px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+}
