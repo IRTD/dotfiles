@@ -1,16 +1,27 @@
-(defwindow wallpaper
+(defwindow wallpaper-mon1
+    :monitor 1
+    :exclusive false
+    :stacking "bottom"
+    (box (image
+        :path "./wallpaper-mon1"
+        :image-width 2256
+        :image-height 1504
+    ))
+)
+
+(defwindow wallpaper-mon0
     :monitor 0
     :exclusive false
     :stacking "bottom"
     (box (image
-        :path "./wallpaper"
+        :path "./wallpaper-mon0"
         :image-width 2256
         :image-height 1504
     ))
 )
 
 (defwindow bar
-    :monitor 0
+    :monitor 1
     :exclusive true
     :stacking "fg"
     :halign "top center"

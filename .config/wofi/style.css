@@ -5,6 +5,7 @@ window {
     background: linear-gradient(0deg, rgba(61,41,41,0.3) 0%, rgba(153,57,57,0.8) 100%);
     border-radius: 30px;
     color: rgba(150, 150, 150, 1);
+    font: 15px SpaceMono
 }
 
 #input {

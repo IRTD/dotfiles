@@ -1,4 +1,9 @@
-rm ~/dotfiles/.config/eww/wallpaper -f
-ln -s $PWD/$1 ~/dotfiles/.config/eww/wallpaper
-eww close wallpaper
-eww open wallpaper
+if [ -z "$2" ]; then
+    echo "Please specify a monitor as second arg"
+    exit
+fi
+
+rm ~/dotfiles/.config/eww/wallpaper-mon$2 -f
+ln -s $PWD/$1 ~/dotfiles/.config/eww/wallpaper-mon$2
+eww close wallpaper-mon$2
+eww open wallpaper-mon$2
