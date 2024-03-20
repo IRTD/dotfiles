@@ -1,0 +1,6 @@
+name=$1
+if [ -z "$1" ]; then
+    name=$(echo "$(date -I).png")
+fi
+
+wl-paste > $name

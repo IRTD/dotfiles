@@ -1,0 +1,2 @@
+slurp | grim -t png -g - - | wl-copy -t image/png
+notify-send Slurp "Yoinked Screenshot and copied to clipboard"
