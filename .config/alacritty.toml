@@ -5,8 +5,8 @@ size = 12.0
 
 [font.normal]
 # family = "Classic Console Neue"
-# family = "SpaceMono Nerd Font Mono"
-family = "SpaceMono"
+family = "SpaceMono Nerd Font Mono"
+# family = "SpaceMono"
 style = "Bold"
 
 [window]
