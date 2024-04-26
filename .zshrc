@@ -1,6 +1,7 @@
-# if [[ $(hyprctl instances | wc -l) -eq 1 ]]; then
-    # Hyprland
-# fi
+if [ -z $(echo $HYPRLAND_INSTANCE_SIGNATURE) ];then
+    Hyprland
+    exit
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -127,15 +128,6 @@ add_to_path () {
 
 # export DISPLAY=:0.0
 
-if tmux has-session 2> /dev/null; then
-    tmux attach
-else
-    tmux new -d -s std -n std
-    tmux send-keys -t std:std "source ~/.tmux_start_bashrc" Enter "clear" Enter
-    
-    tmux attach
-fi
-. "$HOME/.cargo/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -626,3 +618,82 @@ bindkey '^I' fzf-completion
   'unset' '__fzf_completion_options'
 }
 ### end: completion.zsh ###
+
+. /home/irtd/export-esp.sh
+
+source ~/dotfiles/zshplugs/zzcomplete/zzcomplete.plugin.zsh
+source ~/dotfiles/zshplugs/zui/zui.plugin.zsh
+
+setopt no_nomatch
+setopt autocd
+
+export PATH=$PATH:~/.cargo/bin/
+export PATH=$PATH:~/.config/zig/
+export PATH=$PATH:~/.conda/envs/
+export PATH=$PATH:~/dotfiles/.config/scripts
+
+alias v="nvim"
+alias c="clear"
+alias .="exa -1laB --git"
+alias x="exit"
+alias stgui="firefox https://localhost:8384"
+alias rm="rm -i"
+alias cp="cp -i"
+alias obsidian="flatpak run md.obsidian.Obsidian"
+alias ga="git add"
+alias gc="git commit -a -m"
+alias gp="git push"
+alias gpup="git pull --set-upstream"
+alias gpull="git pull"
+alias cd="z"
+alias fzf="fzf-tmux -p -w 50% -h 50%"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function clear-to-ls() {
+    clear
+    exa -1laB --git
+    tmux send-keys Enter
+}
+
+function quick-zox() {
+    zi
+    zle clear-to-ls
+}
+
+function open-vim() {
+    tmux send-keys nvim\ ** TAB
+}
+
+function bat_fzf() {
+    tmux send-keys bat\ ** TAB
+}
+
+function cargo_docs() {
+    cargo doc --open
+}
+
+bindkey "^l" clear-to-ls
+bindkey "^z" quick-zox
+bindkey "^v" open-vim
+bindkey "^a" bat_fzf
+bindkey "^w" cargo_docs
+zle -N cargo_docs
+zle -N bat_fzf
+zle -N clear-to-ls
+zle -N quick-zox
+zle -N open-vim
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+eval "$(atuin gen-completions --shell zsh)"
+
+if tmux has-session 2> /dev/null; then
+    tmux attach
+else
+    tmux new -d -s std -n std
+    tmux send-keys -t std:std "source ~/.tmux_start_bashrc" Enter "clear" Enter
+    
+    tmux attach
+fi
+. "$HOME/.cargo/env"
