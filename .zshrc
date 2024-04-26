@@ -647,6 +647,7 @@ alias gpup="git pull --set-upstream"
 alias gpull="git pull"
 alias cd="z"
 alias fzf="fzf-tmux -p -w 50% -h 50%"
+alias feh="feh -d"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
