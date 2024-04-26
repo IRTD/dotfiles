@@ -1,6 +1,11 @@
-width=1000
-height=600
+width=500
+height=400
 location=center
 show=drun
-prompt=TinEye it...
+prompt=Spook?
 no_actions=true
+allow_images=true
+term=alacritty
+insensitive=true
+matching=multi-contains
+single_click=true

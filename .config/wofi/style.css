@@ -1,9 +1,9 @@
-window {
+#window {
     margin: 0px;
-    border: 0px solid #9e1837; 
-    background: rgb(61,41,41);
-    background: linear-gradient(0deg, rgba(61,41,41,0.3) 0%, rgba(153,57,57,0.8) 100%);
-    border-radius: 30px;
+    border: 0px solid rgba(100, 0, 100, .8);
+    background: rgb(61,0,41);
+    background: linear-gradient(0deg, rgba(61,0,41,0.5) 0%, rgba(153,0,57,0.8) 100%);
+    border-radius: 12px;
     color: rgba(150, 150, 150, 1);
     font: 15px SpaceMono
 }
@@ -16,13 +16,13 @@ window {
     border: none;
     color: rgba(255, 255, 255, 1);
     font-weight: bold;
-    background: ;
+    background: none;
         outline: none;
 }
 
 #input:focus {
     border: 0px solid #520a35;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #inner-box {
@@ -38,7 +38,7 @@ window {
 
 #entry:selected {
     margin: 0px;
-    background-color: rgba(170, 70, 70, 0.5);
+    background-color: rgba(150, 0, 90, 0.5);
     padding-left: 15px;
     padding-bottom: 5px;
     border-radius: 30px;
