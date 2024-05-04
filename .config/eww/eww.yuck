@@ -15,8 +15,8 @@
     :stacking "bottom"
     (box (image
         :path "./wallpaper-mon0"
-        :image-width 2256
-        :image-height 1504
+        :image-width 3840
+        :image-height 2160
     ))
 )
 
