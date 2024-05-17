@@ -652,6 +652,7 @@ alias feh="feh -d"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function clear-to-ls() {
+    tmux send-keys C-c
     clear
     exa -1laB --git
     tmux send-keys Enter
@@ -698,3 +699,4 @@ else
     tmux attach
 fi
 . "$HOME/.cargo/env"
+eval $(thefuck --alias)
