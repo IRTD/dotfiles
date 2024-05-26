@@ -38,8 +38,6 @@ clear
 echo "Fetching dotfiles..."
 git clone https://github.com/IRTD/dotfiles ~/dotfiles
 cd ~/dotfiles 
-git switch origin hypr-new
-git pull origin hypr-new
 stow . 
 
 clear
