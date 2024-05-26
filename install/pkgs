@@ -21,3 +21,5 @@ flatpak
 flatpak-builder
 npm
 github-cli
+libdbusmenu-glib
+libdbusmenu-gtk3
