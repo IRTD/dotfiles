@@ -45,3 +45,5 @@ for flatpkg in $(cat flatpak-apps)
 do
     flatpak install $flatpkg
 end
+
+echo "Everything done, enjoy!"
