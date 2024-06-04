@@ -1,0 +1,25 @@
+# Automatically git adds, commits and pushes upstream
+# if a branch is given as second argument, push and set that as upstream
+
+commit_msg=$1
+
+if [ ! -n "$commit_msg" ]; then
+    echo "Missing Commit Message"
+    exit 1
+fi
+
+if [ "$#" -lt 2 ]; then
+    shift
+    branch="$*"
+fi
+
+git add .
+git commit -a -m "$commit_msg"
+"
+if [ -n "$branch" ]; then
+    echo "Pushing and setting upstream to '$branch'"
+    git push --set-upstream "$branch"
+else
+    echo "Pushing to pre-defined upstream"
+    git push
+fi
