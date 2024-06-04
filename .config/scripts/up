@@ -20,6 +20,6 @@ if [ -n "$branch" ]; then
     echo "Pushing and setting upstream to '$branch'"
     git push --set-upstream "$branch"
 else
-    echo "Pushing to pre-defined upstream"
+    # echo "Pushing to pre-defined upstream""
     git push
 fi
