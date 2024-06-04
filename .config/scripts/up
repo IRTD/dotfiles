@@ -1,6 +1,6 @@
 # Automatically git adds, commits and pushes upstream
 # if a branch is given as second argument, push and set that as upstream
-# set -e
+set -e
 
 commit_msg=$1
 
