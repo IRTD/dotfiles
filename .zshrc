@@ -645,9 +645,14 @@ alias gc="git commit -a -m"
 alias gp="git push"
 alias gpup="git pull --set-upstream"
 alias gpull="git pull"
+alias bat="bat --color=always --wrap=never --italic-text=always --decorations=always"
 alias cd="z"
-alias fzf="fzf-tmux -p -w 50% -h 50%"
+alias fzf='fzf-tmux -p -w 60% -h 70% --preview="bat --color=always --wrap=never --italic-text=always --decorations=always {}"'
 alias feh="feh -d"
+
+# Cmds for shortcuts, since they don't work when inserted in functions
+alias batfzf='bat $(fzf)'
+alias nvimfzf='nvim $(fzf)'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -664,11 +669,11 @@ function quick-zox() {
 }
 
 function open-vim() {
-    tmux send-keys nvim\ ** TAB
+    tmux send-keys "nvimfzf" Enter
 }
 
 function bat_fzf() {
-    tmux send-keys bat\ ** TAB
+    tmux send-keys "batfzf" Enter
 }
 
 function cargo_docs() {
@@ -695,6 +700,9 @@ if tmux has-session 2> /dev/null; then
 else
     tmux new -d -s std -n std
     tmux send-keys -t std:std "source ~/.tmux_start_bashrc" Enter "clear" Enter
+    tmux send-keys -t std:std "source ~/esp/esp-idf/export.sh" Enter "clear" Enter
+
+
     
     tmux attach
 fi
