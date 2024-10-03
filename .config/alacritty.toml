@@ -1,12 +1,21 @@
 live_config_reload = true
 
 [font]
-size = 18.0
+size = 24.0
 
 [font.normal]
 # family = "Classic Console Neue"
-family = "SpaceMono Nerd Font Mono"
+# family = "SpaceMono Nerd Font Mono"
 # family = "SpaceMono"
+family = "Agave Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Agave Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Agave Nerd Font"
 style = "Bold"
 
 [window]
@@ -14,3 +23,6 @@ decorations = "None"
 dynamic_padding = false
 opacity = 0.45
 startup_mode = "Maximized"
+
+[mouse]
+hide_when_typing = true
